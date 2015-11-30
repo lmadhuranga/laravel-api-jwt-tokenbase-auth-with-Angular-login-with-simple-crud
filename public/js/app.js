@@ -1,6 +1,6 @@
 
 // Declare app level module which depends on filters, and services
-var myApp = angular.module('myApp',['ui.router', 'satellizer','Sample.controllers']);
+var myApp = angular.module('myApp',['ui.router', 'satellizer','Sample.controllers','User.controllers']);
 
 myApp.config(function($stateProvider, $urlRouterProvider, $authProvider){
 
@@ -22,6 +22,11 @@ myApp.config(function($stateProvider, $urlRouterProvider, $authProvider){
             url: '/users',
             templateUrl: 'views/userView.html',
             controller: 'UserController as user'
+        })
+        .state('adduser', {
+            url: '/adduser',
+            templateUrl: 'views/userAdd.html',
+            controller: 'AddUserController as adduser'
         });
 });
 
